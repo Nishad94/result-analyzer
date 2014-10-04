@@ -78,7 +78,7 @@ public class DB_Insert {
 		sub_doc.put("Status", status);
 	}
 
-	public void put_result_statement(String tmp, BasicDBObject obj) {
+	/*public void put_result_statement(String tmp, BasicDBObject obj) {
 		String year;
 		if (obj.containsField("F"))
 			year = "F";
@@ -91,6 +91,10 @@ public class DB_Insert {
 		((DBObject) obj.get(year)).put("Result", tmp);
 	}
 
+	public void put_result_code(String tmp, BasicDBObject obj) {
+		
+		((DBObject) obj.get(year)).put("Result Code", tmp);
+	}*/
 	// Insert academic record into main if it isn't a duplicate and then insert
 	// into db
 	// Returns false if an entry/update is performed
