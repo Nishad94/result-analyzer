@@ -23,7 +23,7 @@ public class GUI extends JFrame {
 	private JPanel contentPane;
 	//private SearchScreen new_search_screen;
 	//static PDFtoDB_Insert begin;
-	static GUI Mainframe;
+	static GUI Mainframe = new GUI();
 	DB_Init db_table = new DB_Init();
 	/**
 	 * Launch the application.
@@ -110,6 +110,8 @@ public class GUI extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				SearchScreen SearchFrame = new SearchScreen(Mainframe, db_table);
 				SearchFrame.setVisible(true);
+				Aggregation AggregationFrame = new Aggregation(Mainframe, db_table);
+				AggregationFrame.setVisible(true);
 				Mainframe.setVisible(false);			
 				dispose();
 			}

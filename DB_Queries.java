@@ -60,7 +60,6 @@ public class DB_Queries {
 
 	public DBCursor sort_by_college(DBCollection dbc) {
 		return dbc.find().sort(new BasicDBObject("College", 1));
-
 	}
 
 	public DBCursor sort_by_roll(DBCollection dbc, char year) {

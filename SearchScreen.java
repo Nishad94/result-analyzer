@@ -64,11 +64,11 @@ public class SearchScreen extends JFrame {
 		textField.setColumns(10);
 		
 		String searchMenu[] = {"Name", "Roll No."};
-		final JComboBox comboBox = new JComboBox(searchMenu);
+		final JComboBox name_or_roll = new JComboBox(searchMenu);
 		//comboBox.setModel(new DefaultComboBoxModel());
-		comboBox.setBorder(UIManager.getBorder("FileChooser.listViewBorder"));
-		comboBox.setBounds(600, 22, 81, 28);
-		contentPane.add(comboBox);
+		name_or_roll.setBorder(UIManager.getBorder("FileChooser.listViewBorder"));
+		name_or_roll.setBounds(600, 22, 81, 28);
+		contentPane.add(name_or_roll);
 		
 		List<String[]> data = q_gui.filterByCriteria("College", "Branch", "Batch", "Year", db_table);
 		
@@ -113,30 +113,30 @@ public class SearchScreen extends JFrame {
 		
 		final String collegeMenu[] = q_gui.collegeList(db_table);
 		
-		final JComboBox comboBox_1 = new JComboBox(collegeMenu);
+		final JComboBox colg_list = new JComboBox(collegeMenu);
 		
-		comboBox_1.setName("");
-		comboBox_1.setBorder(UIManager.getBorder("FileChooser.listViewBorder"));
-		comboBox_1.setBounds(10, 77, 150, 28);
-		contentPane.add(comboBox_1);
+		colg_list.setName("");
+		colg_list.setBorder(UIManager.getBorder("FileChooser.listViewBorder"));
+		colg_list.setBounds(10, 77, 150, 28);
+		contentPane.add(colg_list);
 		
 		final String branchMenu[] = q_gui.branchList(db_table);
-		final JComboBox comboBox_2 = new JComboBox(branchMenu);
-		comboBox_2.setBorder(UIManager.getBorder("FileChooser.listViewBorder"));
-		comboBox_2.setBounds(168, 77, 150, 28);
-		contentPane.add(comboBox_2);
+		final JComboBox branch_list = new JComboBox(branchMenu);
+		branch_list.setBorder(UIManager.getBorder("FileChooser.listViewBorder"));
+		branch_list.setBounds(168, 77, 150, 28);
+		contentPane.add(branch_list);
 		
 		final String batchMenu[] = q_gui.batchList(db_table);
-		final JComboBox comboBox_3 = new JComboBox(batchMenu);
-		comboBox_3.setBorder(UIManager.getBorder("FileChooser.listViewBorder"));
-		comboBox_3.setBounds(330, 77, 150, 28);
-		contentPane.add(comboBox_3);
+		final JComboBox batch_list = new JComboBox(batchMenu);
+		batch_list.setBorder(UIManager.getBorder("FileChooser.listViewBorder"));
+		batch_list.setBounds(330, 77, 150, 28);
+		contentPane.add(batch_list);
 		
 		final String yearMenu[] = {"Year", "FE", "SE", "TE", "BE"};
-		final JComboBox comboBox_4 = new JComboBox(yearMenu);
-		comboBox_4.setBorder(UIManager.getBorder("FileChooser.listViewBorder"));
-		comboBox_4.setBounds(493, 77, 150, 28);
-		contentPane.add(comboBox_4);
+		final JComboBox year_list = new JComboBox(yearMenu);
+		year_list.setBorder(UIManager.getBorder("FileChooser.listViewBorder"));
+		year_list.setBounds(493, 77, 150, 28);
+		contentPane.add(year_list);
 		
 		JSeparator separator = new JSeparator();
 		separator.setBounds(0, 114, 739, 2);
@@ -150,12 +150,12 @@ public class SearchScreen extends JFrame {
 				//homescreen.setVisible(true);
 				//dispose();
 				
-				if(comboBox.getSelectedItem().toString() == "Name")
+				if(name_or_roll.getSelectedItem().toString() == "Name")
 				{
 					table_model.deleteAllRows();
 					table_model.addTheseRows(q_gui.searchByName(textField.getText(), db_table));
 				}
-				else if(comboBox.getSelectedItem().toString() == "Roll No."){
+				else if(name_or_roll.getSelectedItem().toString() == "Roll No."){
 					table_model.deleteAllRows();
 					table_model.addTheseRows(q_gui.searchByRoll(textField.getText(), db_table));
 				}
@@ -171,7 +171,7 @@ public class SearchScreen extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("Hi");
 				table_model.deleteAllRows();
-				table_model.addTheseRows(q_gui.filterByCriteria(comboBox_1.getSelectedItem().toString(), comboBox_2.getSelectedItem().toString(),comboBox_3.getSelectedItem().toString(), comboBox_4.getSelectedItem().toString(), db_table));
+				table_model.addTheseRows(q_gui.filterByCriteria(colg_list.getSelectedItem().toString(), branch_list.getSelectedItem().toString(),batch_list.getSelectedItem().toString(), year_list.getSelectedItem().toString(), db_table));
 			}
 		});
 		btnNewButton.setBounds(653, 78, 66, 25);

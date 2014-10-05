@@ -19,6 +19,10 @@ import javax.swing.UnsupportedLookAndFeelException;
 
 public class branchSelection extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField rollStart_1;
 	private JTextField rollEnd_1;

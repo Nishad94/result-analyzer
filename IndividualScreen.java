@@ -19,6 +19,10 @@ import com.mongodb.DBObject;
 
 public class IndividualScreen extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JPanel topPanel;
 	private JScrollPane scrollPane;

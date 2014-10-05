@@ -1,14 +1,9 @@
 import java.util.ArrayList;
-import java.util.Map;
-import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.bson.BSONObject;
-
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCursor;
-import com.mongodb.DBObject;
 
 /* MongoDB document format :
  * 	{
